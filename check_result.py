@@ -1,0 +1,20 @@
+import json
+with open('data/eth_triple_tf_final.json', 'r', encoding='utf-8') as f:
+    d = json.load(f)
+ds = d['deepseek_decision']
+print('=== DeepSeek 最终决策 (Telegram 实际发送) ===')
+print(f"recommendation: {ds.get('recommendation')}")
+print(f"confidence:     {ds.get('confidence')}")
+print(f"entry_type:     {ds.get('entry_type')}")
+print(f"entry_price:    {ds.get('entry_price')}")
+print(f"sell_price:     {ds.get('sell_price')}")
+print(f"stop_loss:      {ds.get('stop_loss')}")
+print(f"take_profit:    {ds.get('take_profit')}")
+print(f"invalidation:   {ds.get('invalidation_price')}")
+print(f"current_price:  {ds.get('current_price')}")
+print(f"gap_to_entry:   {ds.get('gap_to_entry_pct')}%")
+print(f"risk_reward:    1:{ds.get('risk_reward_ratio')}")
+print(f"key_factors:    {ds.get('key_factors')}")
+print(f"sl_logic:       {ds.get('stop_loss_logic')}")
+print(f"tp_logic:       {ds.get('take_profit_logic')}")
+print(f"analysis:       {ds.get('analysis')}")
